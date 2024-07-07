@@ -1,0 +1,36 @@
+
+mixin menu(menu_name, icon_name)
+	li.menu__item._icon-chevron
+		.menu__name(class=icon_name)
+			p=menu_name
+		.menu__arrow
+
+header.header 
+	div
+		.logo 
+			a(href="http://link", target="_blank") 
+				.logo__img 
+					img(src="@img/icons/setting 1.png" alt="setting")
+				.logo__name 
+					h1 Dashboard
+				.logo__version
+					span v.01
+		.menu
+			ul.menu__list
+				+menu('Dashboard', '_icon-iconkey')
+				+menu('Product', '_icon-square')
+				+menu('Customers', '_icon-user')
+				+menu('Income', '_icon-wallet')
+				+menu('Promote', '_icon-discount')
+				+menu('Help', '_icon-message')
+	.avatar
+		.avatar__img 
+			img(src="@img/avatar.jpeg", alt="avatar", srcset="")
+		.avatar__info
+			p.avatar__name Evano 
+			span 
+				p.avatar__profession Project
+				p.avatar__profession  Manager
+
+
+

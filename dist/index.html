@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ua">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Work</title>
+    <link rel="stylesheet" href="./css/style.min.css?_v=20240707143147">
+  </head>
+  <body> 
+    <div class="wrapper wrapper__container">
+      <header class="header"> 
+        <div>
+          <div class="logo"> <a href="http://link" target="_blank"> 
+              <div class="logo__img"> <img src="img/icons/setting 1.png" alt="setting"></div>
+              <div class="logo__name"> 
+                <h1>Dashboard</h1>
+              </div>
+              <div class="logo__version"><span>v.01</span></div></a></div>
+          <div class="menu">
+            <ul class="menu__list">
+                    <li class="menu__item _icon-chevron">
+                      <div class="menu__name _icon-iconkey">
+                        <p>Dashboard</p>
+                      </div>
+                      <div class="menu__arrow"></div>
+                    </li>
+                    <li class="menu__item _icon-chevron">
+                      <div class="menu__name _icon-square">
+                        <p>Product</p>
+                      </div>
+                      <div class="menu__arrow"></div>
+                    </li>
+                    <li class="menu__item _icon-chevron">
+                      <div class="menu__name _icon-user">
+                        <p>Customers</p>
+                      </div>
+                      <div class="menu__arrow"></div>
+                    </li>
+                    <li class="menu__item _icon-chevron">
+                      <div class="menu__name _icon-wallet">
+                        <p>Income</p>
+                      </div>
+                      <div class="menu__arrow"></div>
+                    </li>
+                    <li class="menu__item _icon-chevron">
+                      <div class="menu__name _icon-discount">
+                        <p>Promote</p>
+                      </div>
+                      <div class="menu__arrow"></div>
+                    </li>
+                    <li class="menu__item _icon-chevron">
+                      <div class="menu__name _icon-message">
+                        <p>Help</p>
+                      </div>
+                      <div class="menu__arrow"></div>
+                    </li>
+            </ul>
+          </div>
+        </div>
+        <div class="avatar">
+          <div class="avatar__img"> <picture><source srcset="img/avatar.webp, " type="image/webp"><img src="img/avatar.jpeg" alt="avatar" srcset=""></picture></div>
+          <div class="avatar__info">
+            <p class="avatar__name">Evano </p><span> 
+              <p class="avatar__profession">Project</p>
+              <p class="avatar__profession"> Manager</p></span>
+          </div>
+        </div>
+      </header><!-- Для модулювання активної кнопки необхідно змінити клас "table-content__rows_inactive" на клас "table-content__rows_active"  -->
+      <main class="page"> 
+        <div class="page__wrapper">
+          <div class="greeting"> 
+            <p class="greeting__text">Hello Evano 👋🏼,</p>
+          </div>
+          <div class="tables">
+            <div class="tables__header">
+              <div class="tables__content">
+                <h3 class="tables__title">All Customers</h3>
+                <p class="tables__text">Active Members</p>
+              </div>
+              <div class="tables__form search-form"><a class="search-form__btn _icon-search" href=""></a>
+                <input class="search-form__txt" type="text" name="search" value="" placeholder="Search">
+              </div>
+            </div>
+            <div class="tables__rows table-content">
+              <div class="table-content__head">
+                <div>Customer Name	</div>
+                <div>Company</div>
+                <div>Phone Number</div>
+                <div>Email</div>
+                <div>Country</div>
+                <div>Status</div>
+              </div>
+              <div class="table-content__body">
+                      <div class="table-content__rows table-content__rows_inactive">
+                        <div>Jane Cooper</div>
+                        <div>Microsoft</div>
+                        <div>(225) 555-0118</div>
+                        <div>jane@microsoft.com</div>
+                        <div>United States</div>
+                        <div><span class="table-content__status-block">Inactive</span></div>
+                      </div>
+                      <div class="table-content__rows table-content__rows_inactive">
+                        <div>Floyd Miles</div>
+                        <div>Yahoo</div>
+                        <div>(205) 555-0100</div>
+                        <div>floyd@yahoo.com</div>
+                        <div>Kiribati</div>
+                        <div><span class="table-content__status-block">Inactive</span></div>
+                      </div>
+                      <div class="table-content__rows table-content__rows_inactive">
+                        <div>Ronald Richards</div>
+                        <div>Adobe</div>
+                        <div>(302) 555-0107</div>
+                        <div>ronald@adobe.com</div>
+                        <div>Israel</div>
+                        <div><span class="table-content__status-block">Inactive</span></div>
+                      </div>
+                      <div class="table-content__rows table-content__rows_inactive">
+                        <div>Marvin McKinney</div>
+                        <div>Tesla</div>
+                        <div>(252) 555-0126</div>
+                        <div>marvin@tesla.com</div>
+                        <div>Iran</div>
+                        <div><span class="table-content__status-block">Inactive</span></div>
+                      </div>
+                      <div class="table-content__rows table-content__rows_inactive">
+                        <div>Jerome Bell</div>
+                        <div>Google</div>
+                        <div>(629) 555-0129</div>
+                        <div>jerome@google.com</div>
+                        <div>Réunion</div>
+                        <div><span class="table-content__status-block">Inactive</span></div>
+                      </div>
+                      <div class="table-content__rows table-content__rows_inactive">
+                        <div>Kathryn Murphy</div>
+                        <div>Microsoft</div>
+                        <div>(406) 555-0120</div>
+                        <div>kathryn@microsoft.com</div>
+                        <div>Curaçao</div>
+                        <div><span class="table-content__status-block">Inactive</span></div>
+                      </div>
+                      <div class="table-content__rows table-content__rows_inactive">
+                        <div>Jacob Jones</div>
+                        <div>Yahoo</div>
+                        <div>(208) 555-0112</div>
+                        <div>jacob@yahoo.com</div>
+                        <div>Brazil</div>
+                        <div><span class="table-content__status-block">Inactive</span></div>
+                      </div>
+                      <div class="table-content__rows table-content__rows_inactive">
+                        <div>Pavlo Seravin</div>
+                        <div>IT company</div>
+                        <div>(098) 530-3486</div>
+                        <div>recrollfed@gmail.com</div>
+                        <div>Ukraine</div>
+                        <div><span class="table-content__status-block">Inactive</span></div>
+                      </div>
+              </div>
+              <div class="table-content__navigation navigation">
+                <div class="navigation__legend"> 
+                  <p>Showing data 1 to 8 of  256K entries</p>
+                </div>
+                <nav class="navigation__buttons">
+                  <ul class="navigation__list"> 
+                    <li class="navigation__arrow button _button-prev _icon-chevron"> <a href="#0"> </a></li>
+                    <li class="navigation__link _active"><a class="_el-link" href="#0">1</a></li>
+                    <li class="navigation__link"><a class="_el-link" href="#0">2</a></li>
+                    <li class="navigation__link"><a class="_el-link" href="#0">3</a></li>
+                    <li class="navigation__link"><a class="_el-link" href="#0">4</a></li>
+                    <li class="_disabled"><span>...</span></li>
+                    <li class="_disabled"><a class="_el-link" href="#0">40</a></li>
+                    <li class="navigation__arrow button _button-next _icon-chevron"> <a href="#0"> </a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="./js/app.js?_v=20240707143147"></script>
+  </body>
+</html>

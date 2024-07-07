@@ -1,0 +1,12 @@
+
+<!-- Для модулювання активної кнопки необхідно змінити клас "table-content__rows_inactive" на клас "table-content__rows_active"  -->
+mixin table-row(name, company, phone, email, country, status)
+  .table-content__rows.table-content__rows_inactive
+    div=name
+    div=company
+    div=phone
+    div=email
+    div=country 
+    div
+      span.table-content__status-block=status
+

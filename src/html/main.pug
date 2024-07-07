@@ -1,0 +1,652 @@
+include ../components/mixins/mixins.pug
+
+main.page 
+	.page__wrapper
+		.greeting 
+			p.greeting__text Hello Evano 👋🏼,
+		.tables
+			.tables__header
+				.tables__content
+					h3.tables__title All Customers
+					p.tables__text Active Members
+				.tables__form.search-form
+					a(href="").search-form__btn._icon-search
+					input(type="text" name="search" value="" placeholder="Search").search-form__txt
+			.tables__rows.table-content
+				.table-content__head
+					div Customer Name	
+					div Company
+					div Phone Number
+					div Email
+					div Country
+					div Status
+				.table-content__body
+					+table-row("Jane Cooper", "Microsoft", "(225) 555-0118", "jane@microsoft.com", "United States", "Inactive")
+					+table-row("Floyd Miles", "Yahoo", "(205) 555-0100", "floyd@yahoo.com", "Kiribati", "Inactive")
+					+table-row("Ronald Richards", "Adobe", "(302) 555-0107", "ronald@adobe.com", "Israel", "Inactive")
+					+table-row("Marvin McKinney", "Tesla", "(252) 555-0126", "marvin@tesla.com", "Iran", "Inactive")
+					+table-row("Jerome Bell", "Google", "(629) 555-0129", "jerome@google.com", "Réunion", "Inactive")
+					+table-row("Kathryn Murphy", "Microsoft", "(406) 555-0120", "kathryn@microsoft.com", "Curaçao", "Inactive")
+					+table-row("Jacob Jones", "Yahoo", "(208) 555-0112", "jacob@yahoo.com", "Brazil", "Inactive")
+					+table-row("Pavlo Seravin", "IT company", "(098) 530-3486", "recrollfed@gmail.com", "Ukraine", "Inactive")
+				.table-content__navigation.navigation
+					.navigation__legend 
+						p Showing data 1 to 8 of  256K entries
+					nav.navigation__buttons
+						ul.navigation__list 
+							li.navigation__arrow.button._button-prev._icon-chevron 
+								a(href="#0") 
+							li.navigation__link._active
+								a._el-link(href="#0") 1
+							li.navigation__link
+								a._el-link(href="#0") 2
+							li.navigation__link
+								a._el-link(href="#0") 3
+							li.navigation__link
+								a._el-link(href="#0") 4
+							li._disabled
+								span ...
+							li._disabled
+								a._el-link(href="#0") 40
+							li.navigation__arrow.button._button-next._icon-chevron  
+								a(href="#0") 
+
+
+					//- .swiper 
+					//- 	.swiper-wrapper 
+					//- 		.swiper-slide slide 1
+
+					//- 		.swiper-slide slide 1
+					//- 		.swiper-slide slide 1
+					//- 		.swiper-slide slide 1
+					//- 		.swiper-slide slide 1
+					//- 	.swiper-pagination 
+					//- 	//- .swiper-button-prev
+					//- 	//- .swiper-button-next
+
+
+//-=================================================================================================
+//-=================================================================================================
+
+//- - let counterThemeBook0 = 1 
+//- - let counterThemeBook1 = 1 
+//- - let counterThemeBook2 = 1 
+//- - 
+//- 	let book0Lessons = [
+//- 		" (ВІДЕО) Тема "+ counterThemeBook0++ +"-го уроку 02.09.2022",
+//- 		" (ВІДЕО) Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку з математики 5 клас.",
+//- 		"Тема "+ counterThemeBook0++ +"-го уроку ."
+//- 	]
+//- - 
+//- 	let book1Lessons = [
+//- 		" (ВІДЕО) Тема "+ counterThemeBook1++ +"-го уроку 02.09.2022",
+//- 		" (ВІДЕО) Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку з математики 6 клас.",
+//- 		"Тема "+ counterThemeBook1++ +"-го уроку ."
+//- 	]
+//- - 
+//- 	let book2Lessons = [
+//- 		" (ВІДЕО) Тема "+ counterThemeBook2++ +"-го уроку 02.09.2022",
+//- 		" (ВІДЕО) Тема "+ counterThemeBook2++ +"-го уроку з фізики 6 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку з фізики 8 клас.",
+//- 		"Тема "+ counterThemeBook2++ +"-го уроку ."
+//- 	]
+
+//- mixin lessonLinkBook0(number)
+//- 	a.lesson-link(class="book1__id-" + number, href="#popup")  
+//- 		button
+//- 			p.theme__text=book0Lessons[number]
+//- mixin lessonLinkBook1(number)
+//- 	a.lesson-link(class="book2__id-" + number, href="#popup")
+//- 		button 
+//- 			p.theme__text=book1Lessons[number]
+//- mixin lessonLinkBook2(number)
+//- 	a.lesson-link(class="book3__id-" + number, href="#popup")
+//- 		button 
+//- 			p.theme__text=book2Lessons[number]
+
+//-================================================================================
+//- main.page 
+//- 	.page__wrapper
+//- 		.page__container
+//- 			img.teacher__img.lock__padding(src="@img/teachers-img.png" alt="teacher")
+//- 			.banner__wrapper
+//- 				.banner__text 
+//- 					p привіт, <br> я Ельза, помічник <br> Олени Ляшок<br> - і я допомагатиму тобі
+//- 					h1 навчатись <br> вдома!
+//- 				.scrolling__down
+//- 			section.science__wrapper
+//- 				.bookmat.container__fin
+//- 					img.small__bookmat(src="@img/полкаMаленька.png" alt="полиця")
+//- 					img.down__bookmat(src="@img/полкаНижняMаленька.png" alt="полиця нижня")
+//- 					.book.book__science.book__0.tra#_book-0
+//- 						.front.cover.bookpage._opened__book#first__div-book-0(data-cat="_book-0")
+//- 							img.book__img-front.book__img-0#book__img-0(src="@img/5math.png" alt="5math")
+//- 							//- .book__img-front-wrap
+//- 						.back.cover.bookpage.tra#second__div-book-0
+//- 							h1 МАТЕМАТИКА 5 
+//- 						.front.bookpage.next__page-arrow.tra#third__div-book-0
+//- 							+lessonLinkBook0(0)
+//- 							+lessonLinkBook0(1)
+//- 							+lessonLinkBook0(2)
+//- 							+lessonLinkBook0(3)
+//- 							+lessonLinkBook0(4)
+//- 							+lessonLinkBook0(5)
+//- 						.back.bookpage.prev__page-arrow.tra
+//- 							+lessonLinkBook0(6)
+//- 							+lessonLinkBook0(7)
+//- 							+lessonLinkBook0(8)
+//- 							+lessonLinkBook0(9)
+//- 							+lessonLinkBook0(10)
+//- 							+lessonLinkBook0(11)
+//- 						.front.bookpage.next__page-arrow.tra
+//- 							+lessonLinkBook0(12)
+//- 							+lessonLinkBook0(13)
+//- 							+lessonLinkBook0(14)
+//- 							+lessonLinkBook0(15)
+//- 							+lessonLinkBook0(16)
+//- 							+lessonLinkBook0(17)
+//- 						.back.bookpage.prev__page-arrow.tra
+//- 							+lessonLinkBook0(18)
+//- 							+lessonLinkBook0(19)
+//- 							+lessonLinkBook0(20)
+//- 							+lessonLinkBook0(21)
+//- 							+lessonLinkBook0(22)
+//- 							+lessonLinkBook0(23)
+//- 						.front.bookpage.next__page-arrow.tra
+//- 							+lessonLinkBook0(24)
+//- 							+lessonLinkBook0(25)
+//- 							+lessonLinkBook0(26)
+//- 							+lessonLinkBook0(27)
+//- 							+lessonLinkBook0(28)
+//- 							+lessonLinkBook0(29)
+//- 						.back.bookpage.prev__page-arrow.tra
+//- 							+lessonLinkBook0(30)
+//- 							+lessonLinkBook0(31)
+//- 							+lessonLinkBook0(32)
+//- 							+lessonLinkBook0(33)
+//- 							+lessonLinkBook0(34)
+//- 							+lessonLinkBook0(35)
+//- 							//- +lessonLink(33)
+//- 							//- +lessonLink(34)
+//- 						.front.lastpage.bookpage.tra#lastpage__book-0 	
+//- 							footer 
+//- 								a(href="https://en.wikipedia.org/wiki/Phaedrus_(dialogue)" target="_blank").
+//- 									Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, magni.
+//- 					.book.book__science.book__1.math__book-1#_book-1
+//- 						.front.cover.bookpage.firsts__book-div._opened__book#first__div-book-1(data-cat="_book-1")
+//- 							img.book__img-front.book__img-1#book__img-1(src="@img/6math.jpg" alt="6math")
+//- 						.back.cover.bookpage.firsts__book-div#second__div-book-1
+//- 							h1 МАТЕМАТИКА 6
+//- 						.front.bookpage.next__page-arrow#third__div-book-1
+//- 							+lessonLinkBook1(0)
+//- 							+lessonLinkBook1(1)
+//- 							+lessonLinkBook1(2)
+//- 							+lessonLinkBook1(3)
+//- 							+lessonLinkBook1(4)
+//- 							+lessonLinkBook1(5)
+//- 						.back.bookpage.prev__page-arrow.tra
+//- 							+lessonLinkBook1(6)
+//- 							+lessonLinkBook1(7)
+//- 							+lessonLinkBook1(8)
+//- 							+lessonLinkBook1(9)
+//- 							+lessonLinkBook1(10)
+//- 							+lessonLinkBook1(11)
+//- 						.front.bookpage.next__page-arrow.tra
+//- 							+lessonLinkBook1(12)
+//- 							+lessonLinkBook1(13)
+//- 							+lessonLinkBook1(14)
+//- 							+lessonLinkBook1(15)
+//- 							+lessonLinkBook1(16)
+//- 							+lessonLinkBook1(17)
+//- 						.back.bookpage.prev__page-arrow.tra
+//- 							+lessonLinkBook1(18)
+//- 							+lessonLinkBook1(19)
+//- 							+lessonLinkBook1(20)
+//- 							+lessonLinkBook1(21)
+//- 							+lessonLinkBook1(22)
+//- 							+lessonLinkBook1(23)
+//- 						.front.bookpage.next__page-arrow.tra
+//- 							+lessonLinkBook1(24)
+//- 							+lessonLinkBook1(25)
+//- 							+lessonLinkBook1(26)
+//- 							+lessonLinkBook1(27)
+//- 							+lessonLinkBook1(28)
+//- 							+lessonLinkBook1(29)
+//- 						.back.bookpage.prev__page-arrow.tra
+//- 							+lessonLinkBook1(30)
+//- 							+lessonLinkBook1(31)
+//- 							+lessonLinkBook1(32)
+//- 							+lessonLinkBook1(33)
+//- 							+lessonLinkBook1(34)
+//- 							+lessonLinkBook1(35)
+//- 						.front.lastpage.bookpage.tra#lastpage__book-1 	
+//- 							footer 
+//- 								a(href="https://en.wikipedia.org/wiki/Phaedrus_(dialogue)" target="_blank").
+//- 									Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, magni.
+//- 					.book.book__science.book__2.math__book-2#_book-2
+//- 						.front.cover.bookpage.firsts__book-div._opened__book#first__div-book-2(data-cat="_book-2")
+//- 							img.book__img-front.book__img-2#book__img-2(src="@img/8physics.jpg" alt="8phys")
+//- 						.back.cover.bookpage.firsts__book-div#second__div-book-2
+//- 							h1 ФІЗИКА 8
+//- 						.front.bookpage.next__page-arrow#third__div-book-2
+//- 							+lessonLinkBook2(0)
+//- 							+lessonLinkBook2(1)
+//- 							+lessonLinkBook2(2)
+//- 							+lessonLinkBook2(3)
+//- 							+lessonLinkBook2(4)
+//- 							+lessonLinkBook2(5)
+//- 						.back.bookpage.prev__page-arrow.tra
+//- 							+lessonLinkBook2(6)
+//- 							+lessonLinkBook2(7)
+//- 							+lessonLinkBook2(8)
+//- 							+lessonLinkBook2(9)
+//- 							+lessonLinkBook2(10)
+//- 							+lessonLinkBook2(11)
+//- 						.front.bookpage.next__page-arrow.tra
+//- 							+lessonLinkBook2(12)
+//- 							+lessonLinkBook2(13)
+//- 							+lessonLinkBook2(14)
+//- 							+lessonLinkBook2(15)
+//- 							+lessonLinkBook2(16)
+//- 							+lessonLinkBook2(17)
+//- 						.back.bookpage.prev__page-arrow.tra
+//- 							+lessonLinkBook2(18)
+//- 							+lessonLinkBook2(19)
+//- 							+lessonLinkBook2(20)
+//- 							+lessonLinkBook2(21)
+//- 							+lessonLinkBook2(22)
+//- 							+lessonLinkBook2(23)
+//- 						.front.bookpage.next__page-arrow.tra
+//- 							+lessonLinkBook2(24)
+//- 							+lessonLinkBook2(25)
+//- 							+lessonLinkBook2(26)
+//- 							+lessonLinkBook2(27)
+//- 							+lessonLinkBook2(28)
+//- 							+lessonLinkBook2(29)
+//- 						.back.bookpage.prev__page-arrow.tra
+//- 							+lessonLinkBook2(30)
+//- 							+lessonLinkBook2(31)
+//- 							+lessonLinkBook2(32)
+//- 							+lessonLinkBook2(33)
+//- 							+lessonLinkBook2(34)
+//- 							+lessonLinkBook2(35)
+//- 						.front.lastpage.bookpage.tra#lastpage__book-2 	
+//- 							footer 
+//- 								a(href="https://en.wikipedia.org/wiki/Phaedrus_(dialogue)" target="_blank").
+//- 									Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, magni.
+//- 		//- .slider__text
+//- 		//- 	+sliderTextItem(10)
+//- 		.swiper__text.swiper_container
+//- 			.swiper-wrapper
+//- 				+swiperTextItem(10)
+//- 		.swiper.swiper_container
+//- 			.swiper-wrapper 
+//- 				+swiperItem(10)
+//- 		//- .swiper__navigation-wrapper
+//- 		//- 	.swiper-pagination
+//- 		//- 	.swiper__button-wrapper
+//- 		//- 		.swiper-button-prev.arrow-corner.button-p-m.position__button-prev
+//- 		//- 		.swiper-button-next.arrow-corner.button-p-m.position__button-next
+//- 	.popup#popup 	
+//- 		.popup__body
+//- 			.popup__content._close__popup-mode
+//- 				.close__btn.close-popup
+//- 				.lessons__wrap-popup
+//- 					//- +ollLessons('book1__id-', 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+//- 					//- +ollLessons('book1__id-', 0)
+//- 					+ollLessonsBook1('book1__id-', 36)
+//- 					+ollLessonsBook2('book2__id-', 36)
+//- 					+ollLessonsBook3('book3__id-', 36)
+//- 	.popup.popup-2#popup-2 
+//- 		.popup__body 
+//- 			.popup__content 
+//- 				span.close__btn.close-popup 
+//- 				.swiper__popup-content
+//- 					.swiper__img-wrap
+//- 						img(src="@img/5math_big_slider.png" alt="hidden img")
+//- 						+bigSwiperItem(10)
+//- footer.footer.footer__container
+//- 	strong 
+//- 		p 
+//- 			h1 created by 
+//- 				a(href="" target="_blank") Pavlo Seravin 
+//- +ollLessonsBook3('book2__id-', 36)
+
+
+//- +ollLessonsBook2('book2__id-', 37)
+
+
+//-================================================================================
+
+
+
+//- //- ===========================================================================
+//- .banner__wrapper 
+//- 	.banner__image-wrapper._el_anim-banner.position
+//- 		.banner__content
+//- 			.banner-content__wrapper
+//- 				h1.banner__title.title__big Make your interior more minimalistic & modern
+//- 				h3.banner__text Turn your room with panto into a lot more minimalist and modern with ease and speed
+
+//- 				span.call__wrap(get-phone="#form__phone") 
+//- 				form.banner__form#form__phone(action="" data-da="banner-content__wrapper, 767, 0")
+//- 					input.banner__form-input.req(type="tel" placeholder="Телефон")
+//- 					button.banner__form-button(type="submit")
+//- 						span 
+
+//- 		.change__elements-wrapper
+//- 			+changeImgBtn(1)
+//- 			+changeImgBtn(2)
+//- 			+changeImgBtn(3)
+//- 			+changeImgBtn(4)
+//- 	.banner__image-wrapper._el_anim-banner
+//- 		//- .change__elements-wrapper
+//- 		//- 	+changeBannerImg(1)
+//- 		//- 	+changeBannerImg(2)
+//- 		//- 	+changeBannerImg(3)
+//- 		//- 	+changeBannerImg(4)
+//- 		//- +changeBannerImg(1)
+//- 		+bannerImg(1, 1, 0, 0)(class='_active')
+//- 		+bannerImg(1, 2, 1, 0)
+//- 		+bannerImg(1, 3, 2, 0)
+//- 		.banner__object-2-wrapper.objects__wrapper
+//- 			//- +changeBannerImg(2)
+//- 			+bannerImg(2, 1, 3, 1)(class='_active')
+//- 			+bannerImg(2, 2, 4, 1)
+//- 			+bannerImg(2, 3, 5, 1)
+//- 		.banner__object-3-wrapper.objects__wrapper
+//- 			//- +changeBannerImg(3)
+//- 			//- +changeBannerImg(4)
+//- 			+bannerImg(3, 1, 6, 2)(class='_active')
+//- 			+bannerImg(3, 2, 7, 2)
+//- 			+bannerImg(3, 3, 8, 2)
+//- 		.banner__object-4-wrapper.objects__wrapper
+//- 			//- +changeBannerImg(4)
+//- 			+bannerImg(4, 1, 9, 3)(class='_active')
+//- 			+bannerImg(4, 2, 10, 3)
+//- 			+bannerImg(4, 3, 11, 3)
+//- main.main
+//- 	section.page__choosing.choosing._furniture._el_anim
+//- 		.choosing__container
+//- 			.choosing__content
+//- 				h1.choosing__content-title.content-title Why Choosing Us
+//- 			.choosing__items
+//- 				article.choosing__item.item-choosing
+//- 					h4.item-choosing__title.item-title 
+//- 						a(href="") Luxury facilities
+//- 					.choosing-item__text.text
+//- 						p The advantage of hiring a workspace with us is that givees you comfortable service and all-around facilities.
+//- 					a(href="" target="_blank") 	
+//- 						button.choosing-item__button.item-button More info
+//- 				article.choosing__item.item-choosing
+//- 					h4.item-choosing__title.item-title 
+//- 						a(href="" target="_blank") Affordable Price
+//- 					.choosing-item__text.text
+//- 						p You can get a workspace of the highst quality at an affordable price and still enjoy the facilities that are oly here. You can get a workspace of the highst quality at an affordable price and still enjoy the facilities that are oly here.
+//- 					a(href="" target="_blank") 	
+//- 						button.choosing-item__button.item-button More info
+//- 				article.choosing__item.item-choosing
+//- 					h4.item-choosing__title.item-title 
+//- 						a(href="" target="_blank") Many Choices
+//- 					.choosing-item__text.text
+//- 						p We provide many unique work space choices so that you can choose the workspace to your liking.
+//- 					a(href="" target="_blank") 	
+//- 						button.choosing-item__button.item-button More info
+//- 	section.page__selling.selling._selling 
+//- 		.selling__container._el_anim
+//- 			.selling__content
+//- 				h1.selling__content-title.content-title Best Selling Product
+//- 				.selling__tabs.tabs
+//- 					input#radio-1(type="radio" name="tabs" checked)
+//- 					label.tab.swiper__checked(for="radio-1")
+//- 						p.tab__text.text Chair
+//- 					input#radio-2(type="radio" name="tabs")
+//- 					label.tab.swiper__checked(for="radio-2")
+//- 						p.tab__text.text Beds
+//- 					input#radio-3(type="radio" name="tabs")
+//- 					label.tab.swiper__checked(for="radio-3")
+//- 						p.tab__text.text Sofa
+//- 					input#radio-4(type="radio" name="tabs")
+//- 					label.tab.swiper__checked(for="radio-4")
+//- 						p.tab__text.text Lamp
+//- 					span.glider
+//- 			.selling__swiper._el_anim
+//- 				.swiper.swiper-container.swiper_chairs.radio-1._active
+//- 					.swiper-wrapper
+//- 						+sellingSlider("@img/furniture/chair/1.png", "chair", "Sakarias Armchair", "3.5", "92")
+//- 						+sellingSlider("@img/furniture/chair/2.png", "chair", "Baltsar Chair", "4.5", "89")
+//- 						+sellingSlider("@img/furniture/chair/3.png", "chair", "Anjay Chair", "4.2", "42")
+//- 						+sellingSlider("@img/furniture/chair/4.png", "chair", "Nyantuy Chair", "4.5", "89")
+//- 						+sellingSlider("@img/furniture/chair/3.png", "chair", "ПРИКЛАД", "3.5", "50")
+//- 						+sellingSlider("@img/furniture/chair/4.png", "chair", "ПРИКЛАД", "5", "75")
+//- 						+sellingSlider("@img/furniture/chair/1.png", "chair", "ПРИКЛАД", "3.8", "85")
+//- 						+sellingSlider("@img/furniture/chair/2.png", "chair", "ПРИКЛАД", "4.1", "56")
+//- 				.swiper_bed.radio-2.swiper-container 
+//- 					.swiper-wrapper 
+//- 						+sellingSlider("@img/furniture/beds/4.png", "bed", "ліжко якесь", "4.7", "148")
+//- 						+sellingSlider("@img/furniture/beds/3.png", "bed", "ліжко", "4.7", "223")
+//- 						+sellingSlider("@img/furniture/beds/4.png", "bed", "ліжко ще одне", "4,2", "165")
+//- 						+sellingSlider("@img/furniture/beds/2.png", "bed", "ліжко якесь", "4.3", "168")
+//- 						+sellingSlider("@img/furniture/beds/1.png", "bed", "ліжко якесь", "4.9", "122")
+//- 						+sellingSlider("@img/furniture/beds/3.png", "bed", "ліжко друге", "4.5", "198")
+//- 				.swiper_bed.radio-3.swiper-container 
+//- 					.swiper-wrapper 
+//- 						+sellingSlider("@img/furniture/sofa/1.png", "sofa", "ПРИКЛАД", "4.7", "148")
+//- 						+sellingSlider("@img/furniture/sofa/2.png", "sofa", "ПРИКЛАД", "4.2", "263")
+//- 						+sellingSlider("@img/furniture/sofa/3.png", "sofa", "ПРИКЛАД", "3.6", "185")
+//- 						+sellingSlider("@img/furniture/sofa/4.png", "sofa", "ПРИКЛАД", "4.1", "188")
+//- 						+sellingSlider("@img/furniture/sofa/2.png", "sofa", "ПРИКЛАД", "3.8", "142")
+//- 						+sellingSlider("@img/furniture/sofa/1.png", "sofa", "ПРИКЛАД", "4.1", "154")
+//- 						+sellingSlider("@img/furniture/sofa/3.png", "sofa", "ПРИКЛАД", "3.8", "178")
+//- 				.swiper.radio-4.swiper-container 
+//- 					.swiper-wrapper 
+//- 						+sellingSlider("@img/furniture/lamp/1.png", "lamp", "ПРИКЛАД", "4.7", "48")
+//- 						+sellingSlider("@img/furniture/lamp/2.png", "lamp", "ПРИКЛАД", "4.2", "63")
+//- 						+sellingSlider("@img/furniture/lamp/3.png", "lamp", "ПРИКЛАД", "3.6", "85")
+//- 						+sellingSlider("@img/furniture/lamp/4.png", "lamp", "ПРИКЛАД", "4.1", "88")
+//- 						+sellingSlider("@img/furniture/lamp/2.png", "lamp", "ПРИКЛАД", "3.8", "42")
+//- 						+sellingSlider("@img/furniture/lamp/1.png", "lamp", "ПРИКЛАД", "4.1", "54")
+//- 						+sellingSlider("@img/furniture/lamp/3.png", "lamp", "ПРИКЛАД", "3.8", "78")
+//- 				.swiper-button-prev.swiper-arrow
+//- 				.swiper-button-next.swiper-arrow
+//- 			div.swiper__link-all-wrap
+//- 				a.selling__item-button.item-button(href="" target="_blank") View All
+//- 				//- button.selling__item-button.item-button View All
+//- 	section.page__experiences.experiences
+//- 		img.page__experiences-img(src="@img/experiences/2.jpg" alt="img")
+//- 		.experiences__container
+//- 			.experiences__content._el_anim
+//- 				h4.experiences__content-header.header-content
+//- 					a(href="" target="_blank") experiences 
+//- 				h1.experiences__content-tittle.content-title we provide you the best experience
+//- 				.experiences__content-text.text
+//- 					p. 
+//- 						You don’t have to worry about the result because all of these interiors are made by people who are
+//- 						professionals in their fields with an elegant and lucurious style and with premium quality materials
+//- 				a.experiences__item-button.item-button(href="" target="_blank") More Info
+//- 					//- button.experiences__item-button.item-button More Info
+//- 			.experiences__img
+//- 				.experiences__img-shadow
+//- 					img._el_anim(src="@img/experiences/2.jpg" alt="img")
+
+//- 				img._el_anim(src="@img/experiences/2.jpg" alt="img")
+//- 	section.page__materials.materials._el_anim
+//- 		.materials__container
+//- 			.materials__img-wrapper._el_anim
+//- 				.materials__img-column-one
+//- 					.materials__img.img-1
+//- 						.materials__img-shadow-img1 
+//- 							img(src="@img/materials/1.jpg" alt="img")
+//- 						img(src="@img/materials/1.jpg" alt="img")
+//- 					.materials__img.img-2
+//- 						.materials__img-shadow-img2 
+//- 							img(src="@img/materials/2.jpg" alt="img")
+//- 						img(src="@img/materials/2.jpg" alt="img")
+//- 				.materials__img-column-two
+//- 					.materials__img.img-3
+//- 						.materials__img-shadow-img3 
+//- 							img(src="@img/materials/3.jpg" alt="img")
+//- 						img(src="@img/materials/3.jpg" alt="img")
+//- 			.experiences__content.materials
+//- 				h4.experiences__content-header.materials.header-content 
+//- 					a(href="" target="_blank") Materials
+//- 				h1.experiences__content-tittle.materials.content-title Very serious materials for making furniture
+//- 				.experiences__content-text.materials.text
+//- 					p. 
+//- 						Because panto was very serious about designing furniture for our environment, using a very expensive
+//- 						and famous capital but at a relatively low price
+//- 				a.experiences__item-button.item-button(href="" target="_blank")  More Info
+//- 					//- button
+//- 	section.page__testimonials.testimonials._testimonials._el_anim
+//- 		.testimonials__container
+//- 			.testimonials__content
+//- 				h4.testimonials__content-header.header-content 
+//- 					a(href="" target="_blank") Testimonials
+//- 				h1.testimonials__content-title.content-title Our Client Reviews
+//- 			.testimonials__slider
+//- 				.swiper2.swiper-container
+//- 					.swiper-wrapper
+//- 						+testimonialsSwiper(1, "@img/testimonials/avatar/1.jpg", "@img/testimonials/1.jpg", "Bang Upin", "Pedagang Asongan", "4.7")
+//- 						+testimonialsSwiper(2, "@img/testimonials/avatar/2.jpg", "@img/testimonials/2.jpg", "Ibuk Sukijan", "Ibu Rumah Tangga", "4.3")
+//- 						+testimonialsSwiper(3, "@img/testimonials/avatar/3.jpg", "@img/testimonials/3.jpg", "Mpok Ina", "Karyawan Swasta", "4.2")
+//- 						+testimonialsSwiper(4, "@img/testimonials/avatar/2.jpg", "@img/testimonials/2.jpg", "awferg пірер3", "srglro o howg", "5")
+//- 				.swiper-button-prev.swiper-arrow
+//- 				.swiper-button-next.swiper-arrow
+//- footer.footer._about 
+//- 	.footer__container._el_anim
+//- 		.footer__navigation
+//- 			.footer__about
+//- 				.header__logo.footer__logo
+//- 					h1
+//- 						a(href="" target="_blank") FurnitureShop
+//- 				p.footer__text.text._left. 
+//- 					The advantage of hiring a workspace with us is that givees you comfortable
+//- 					service and all-around facilities.
+//- 			.footer__links-wrapper
+//- 				+footerServices("services", "#", "Email Marketing", "#", "Campaigns", "#", "Branding")(class="footer__services")
+//- 				+footerServices("furniture", "#", "beds", "#", "chair", "#", "all")(class="footer__furniture")
+//- 				+footerFollow("Follow Us", "@img/icons/001-facebook.svg", "#", "Facebook", "@img/icons/003-twitter.svg", "#", "Twitter", "@img/icons/004-instagram.svg", "#", "instagram")
+//- 		.footer__copyright._el_anim
+//- 			.copyright__wrapper
+//- 				p.text__copyright.footer__text.text Copyright © 2021
+//- 				.help__links
+//- 					a.help__team.footer__text.text(href="#")
+//- 						p Privacy Policy
+//- #btn-home 
+//- 	a(href="#top") 
+//- 		.btn-top-wrapper.lock-padding
+//- 			.top-btn.menu__link(data-goto=".header")
+//- 				.top-arrow.menu__link(data-goto=".header")
+
+
+
